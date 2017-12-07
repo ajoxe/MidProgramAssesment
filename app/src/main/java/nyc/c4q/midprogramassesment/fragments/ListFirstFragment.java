@@ -27,6 +27,7 @@ public class ListFirstFragment extends Fragment {
     Bundle bundle;
 
 
+
     public ListFirstFragment() {
         // Required empty public constructor
     }
@@ -45,9 +46,13 @@ public class ListFirstFragment extends Fragment {
         numberRecyclerView = rootView.findViewById(R.id.list_fragment_recyclerview);
         List<Number> numberList = new ArrayList<>();
 
+        for (int i =0; i <11; i++){
+            numberList.add(new Number(i));
+        }
+
         NumberAdapter numberAdapter = new NumberAdapter(numberList);
         LinearLayoutManager linearLayoutManager;
-        linearLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
+        linearLayoutManager = new LinearLayoutManager(rootView.getContext().getApplicationContext());
 
         numberRecyclerView.setAdapter(numberAdapter);
         numberRecyclerView.setLayoutManager(linearLayoutManager);
