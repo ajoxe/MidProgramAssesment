@@ -33,7 +33,7 @@ public class MultipliedNumberFragment extends Fragment {
         int preMultiple = Integer.valueOf(passedNumber);
         int multiplied = preMultiple * 10;
         multipliedNumber = (TextView) rootView.findViewById(R.id.number_fragment_textview);
-        multipliedNumber.setText(multiplied);
+        multipliedNumber.setText(String.valueOf(multiplied));
         return rootView;
     }
 
