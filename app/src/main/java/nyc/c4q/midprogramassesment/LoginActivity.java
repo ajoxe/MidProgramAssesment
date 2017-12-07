@@ -37,24 +37,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void submitButtonClick(View view) {
-        /*//TODO Check to see this works
-        SharedPreferences.Editor editor = login.edit();
-        if (checkBox.isChecked()) {
-            editor.putString("username", username.getText().toString());
-            editor.putString("password", password.getText().toString());
-            editor.putBoolean("isChecked", checkBox.isChecked());
-            editor.commit();
-        } else {
-            editor.putBoolean("isChecked", checkBox.isChecked());
-            editor.commit();
-        }
 
-        String checkUser = defaultUser;
-        String checkPassword = defaultPassword;
-
-        if (username.getText().toString().equalsIgnoreCase(login.getString(checkUser, null))
-                && password.getText().toString().equals(login.getString(checkPassword, null))) {
-        }*/
 
         SharedPreferences.Editor editor = login.edit();
         editor.putBoolean("isChecked", checkBox.isChecked());
@@ -69,8 +52,6 @@ public class LoginActivity extends AppCompatActivity {
         }
 
 
-//        Intent listActivityIntent = new Intent(LoginActivity.this, ListActivity.class);
-//        listActivityIntent.putExtra("currentUser", username.getText().toString());
-//        startActivity(listActivityIntent);
+
     }
 }
