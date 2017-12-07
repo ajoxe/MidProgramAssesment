@@ -9,7 +9,9 @@
         android:id="@+id/number_fragment_textview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"
-        android:gravity="center"/>
+        android:text="10"
+        android:gravity="center"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+        android:textSize="56dp"/>
 
 </FrameLayout>
