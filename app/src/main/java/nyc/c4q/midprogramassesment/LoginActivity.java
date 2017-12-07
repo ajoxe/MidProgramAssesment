@@ -26,19 +26,18 @@ public class LoginActivity extends AppCompatActivity {
         checkBox = (CheckBox) findViewById(R.id.remember_me_checkbox);
 
         login = getApplicationContext().getSharedPreferences(SHARED_PREFS_KEY, MODE_PRIVATE);
-        SharedPreferences.Editor editor = login.edit();
-        editor.putString("username", defaultUser);
-        editor.putString("password", defaultPassword);
-        if (login.getBoolean("isChecked", false)) {
+
+        if (login.getBoolean("isChecked", true)) {
             username.setText(login.getString("username", null));
             password.setText(login.getString("password", null));
             checkBox.setChecked(login.getBoolean("isChecked", false));
         }
+//        editor.commit();
 
     }
 
     public void submitButtonClick(View view) {
-        //TODO Check to see this works
+        /*//TODO Check to see this works
         SharedPreferences.Editor editor = login.edit();
         if (checkBox.isChecked()) {
             editor.putString("username", username.getText().toString());
@@ -55,10 +54,23 @@ public class LoginActivity extends AppCompatActivity {
 
         if (username.getText().toString().equalsIgnoreCase(login.getString(checkUser, null))
                 && password.getText().toString().equals(login.getString(checkPassword, null))) {
+        }*/
 
+        SharedPreferences.Editor editor = login.edit();
+        editor.putBoolean("isChecked", checkBox.isChecked());
+        editor.putString("username", username.getText().toString());
+        editor.putString("password", password.getText().toString());
+        editor.commit();
+
+        if (username.getText().toString().equalsIgnoreCase(defaultUser) && password.getText().toString().equals(defaultPassword)) {
             Intent listActivityIntent = new Intent(LoginActivity.this, ListActivity.class);
             listActivityIntent.putExtra("currentUser", username.getText().toString());
             startActivity(listActivityIntent);
         }
+
+
+//        Intent listActivityIntent = new Intent(LoginActivity.this, ListActivity.class);
+//        listActivityIntent.putExtra("currentUser", username.getText().toString());
+//        startActivity(listActivityIntent);
     }
 }

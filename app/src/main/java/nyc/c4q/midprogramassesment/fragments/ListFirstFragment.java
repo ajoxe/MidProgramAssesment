@@ -37,9 +37,10 @@ public class ListFirstFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         rootView =  inflater.inflate(R.layout.fragment_list, container, false);
-        displayUserName = rootView.findViewById(R.id.textview_display_user);
+        displayUserName = (TextView) rootView.findViewById(R.id.textview_display_user);
         bundle = getArguments();
-        displayUserName.setText(bundle.getString("currentUser"));
+        String someString = bundle.getString("currentUser");
+        displayUserName.setText(someString);
 
         numberRecyclerView = rootView.findViewById(R.id.list_fragment_recyclerview);
         List<Number> numberList = new ArrayList<>();
