@@ -31,8 +31,9 @@ public class NumberViewHolder extends RecyclerView.ViewHolder {
 
     public void onBind(final Number number) {
         int numberView = number.getNumber();
-        numberTextView.setText(number.getNumber());
+
         final String numberString = String.valueOf(numberView);
+        numberTextView.setText(numberString);
         numberTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
